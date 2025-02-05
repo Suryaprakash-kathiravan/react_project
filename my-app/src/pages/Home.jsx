@@ -22,25 +22,32 @@ const Home = () => {
   };
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <div className="container mx-auto py-8">
-                <BlogList blogs={blogs} />
-              </div>
-            </>
-          }
-        />
-        <Route path="/add-blog" element={<AddBlog onAddBlog={handleAddBlog} />} />
-        <Route path="/blogs" element={<BlogListPage blogs={blogs} />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className='bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200'>
+      <Router>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <div className="flex-grow">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <div className="container mx-auto py-8">
+                      <BlogList blogs={blogs} />
+                    </div>
+                  </>
+                }
+              />
+              <Route path="/add-blog" element={<AddBlog onAddBlog={handleAddBlog} />} />
+              <Route path="/blogs" element={<BlogListPage blogs={blogs.slice(0,5)} setBlogs={setBlogs} />} />
+              {/* <Route path="/blog/:id" element={<BlogListPage blogs={blogs.slice(0,5)} setBlogs={setBlogs} />} /> */}
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    </div>
   );
 };
 

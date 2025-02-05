@@ -52,61 +52,63 @@ const AddBlog = ({ onAddBlog }) => {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Add a New Blog</h1>
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
-            Title
-          </label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-            placeholder="Enter blog title"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="excerpt">
-            Excerpt
-          </label>
-          <textarea
-            id="excerpt"
-            value={excerpt}
-            onChange={(e) => setExcerpt(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-            placeholder="Enter blog excerpt"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
-            Upload Image
-          </label>
-          <input
-            type="file"
-            id="image"
-            accept="image/*" // Allow only image files
-            onChange={handleImageChange}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-            required
-          />
-          {preview && (
-            <div className="mt-4">
-              <img src={preview} alt="Preview" className="w-full h-48 object-cover rounded-lg" />
-            </div>
-          )}
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300"
-        >
-          Save Blog
-        </button>
-      </form>
+    <div className="bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 min-h-screen flex items-center justify-center p-6">
+      <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-lg transform transition duration-500 hover:scale-105">
+        <h1 className="text-4xl font-bold mb-6 text-center text-purple-700">Add a New Blog</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
+              Title
+            </label>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
+              placeholder="Enter blog title"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="excerpt">
+              Excerpt
+            </label>
+            <textarea
+              id="excerpt"
+              value={excerpt}
+              onChange={(e) => setExcerpt(e.target.value)}
+              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
+              placeholder="Enter blog excerpt"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
+              Upload Image
+            </label>
+            <input
+              type="file"
+              id="image"
+              accept="image/*" // Allow only image files
+              onChange={handleImageChange}
+              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
+              required
+            />
+            {preview && (
+              <div className="mt-4">
+                <img src={preview} alt="Preview" className="w-full h-48 object-cover rounded-lg shadow-md" />
+              </div>
+            )}
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg hover:bg-purple-700 transition-colors duration-300 shadow-lg"
+          >
+            Save Blog
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

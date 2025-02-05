@@ -7,9 +7,9 @@ const BlogDetails = () => {
     <div>
       <Navbar />
       <div className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold mb-4">Blog Title</h1>
+        <h1 className="text-4xl font-bold mb-4 min-h-screen">Blog Title</h1>
         <img src="https://via.placeholder.com/800x400" alt="Blog" className="w-full h-96 object-cover mb-6" />
-        <p className="text-gray-700 leading-relaxed">
+        <p className="leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel justo vitae magna tincidunt tincidunt.
         </p>
       </div>
