@@ -1,3 +1,4 @@
+// AddBlog.jsx
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,6 +34,15 @@ const AddBlog = ({ onAddBlog }) => {
       excerpt,
       image: preview, // Use the Base64 URL as the image source
     };
+
+    // Get existing blogs from local storage
+    const existingBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
+
+    // Add the new blog to the list
+    const updatedBlogs = [...existingBlogs, newBlog];
+
+    // Save the updated list to local storage
+    localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
 
     // Pass the new blog to the parent component
     onAddBlog(newBlog);
