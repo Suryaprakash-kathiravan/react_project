@@ -7,6 +7,9 @@ import BlogList from '../Components/BlogList';
 import Footer from '../Components/Footer';
 import AddBlog from '../Components/AddBlog';
 import BlogListPage from '../Components/BlogListPage';
+import BlogDetails from './BlogDetails';
+import BlogCardExplore from '../Components/BlogCardExplore';
+import Blogpage from '../Components/Blogpage';
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -41,7 +44,8 @@ const Home = () => {
               />
               <Route path="/add-blog" element={<AddBlog onAddBlog={handleAddBlog} />} />
               <Route path="/blogs" element={<BlogListPage blogs={blogs.slice(0,5)} setBlogs={setBlogs} />} />
-              {/* <Route path="/blog/:id" element={<BlogListPage blogs={blogs.slice(0,5)} setBlogs={setBlogs} />} /> */}
+              {/* <Route path="/blogs:id" element={<BlogCardExplore blogs={blogs}/>}/> */}
+              <Route path="/blogs/:id" element={<Blogpage blogs={blogs}/>}/>
             </Routes>
           </div>
           <Footer />
